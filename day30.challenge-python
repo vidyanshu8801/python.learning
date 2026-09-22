@@ -11,7 +11,7 @@ question1.#list basics
    print(num)
 
 
-question1(a)# medium level question list operations
+question2# medium level question list operations
 
 #sort the list its mean sorts in ascendind order
 nums = [3,1,4,1,5,9]
@@ -35,7 +35,7 @@ print(len(nums))
 
 
 
-question2#tuples,indexing
+question3#tuples,indexing
 
 point = (5,10,15,4,6,3,3,4,3)
 print(point[1],point[2])
@@ -51,7 +51,7 @@ print(point)
 tub1=()#empty
 tub2=(1,)#single ,used comma in single element 
 
-question3#string basics
+question4#string basics
 
 #length of str also count space
 str = "Python Programming"
@@ -66,7 +66,7 @@ print(str.lower())
 print(str.replace("Programming","coding"))
 
 
-#question3(a)strings function:
+#question5(a)strings function:
 
 str ="Hello world, this is python "
 #to remove extra space 
@@ -81,7 +81,7 @@ print(str.split())
 
 
 
-question4# Dictionary basic
+question6# Dictionary basic
 
 #print  name,age,city:
 student = {
@@ -100,7 +100,8 @@ print(student)
 
 student["marks"] =85
 print(student)
-#question4(a)medium level:#dictionary
+
+#question7medium level:#dictionary
 #:upadete & delete
 
 person = {
@@ -129,7 +130,7 @@ else:
     print("age key not  exist")
 
 
-question5#set basic question: 
+question8#set basic question: 
 
 #ignor the duplicate vale 
 set ={1,2,2,3,4,4,5}
@@ -143,6 +144,48 @@ print(set)
 set.remove(3)
 print(set)
 
+#question9set operations medium level question 
+
+a = {1,2,3,4,5}
+b ={4,5,6,7}
+#To find union(a| b) = out put {1, 2, 3, 4, 5, 6, 7}
+print(a.union(b))
+
+#to intersection(a&b) = output {4, 5}
+print(a.intersection(b))
+
+#differnce(a-b and b-a)
+result = a.difference(b)
+print(result)
+
+
+result = b.difference(a)
+print(result)
+#elements that are unique to each set.=symmetric difference output={1, 2, 3, 6, 7}
+print(a^b)
+
+
+
+
+students = [
+     {"name": "vidyanshu", "marks": 85},
+     {"name": "riya", "marks": 92},
+     {"name": "anshu", "marks": 78}
+]
+    
+#question10 list of dictionaries
+#print all students
+for students in students:
+    print(students["name"],students["marks"])
+#most higer marks:
+max_marks = -1
+top_student = ""
+
+for student in students:
+    if student["marks"] > max_marks:
+         max_marks = student["marks"] 
+         top_student = student["name"]
+         print("top_student:", top_student,"with marks:",max_marks)
 
 
 
