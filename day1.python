@@ -1,0 +1,159 @@
+question1.#list basics
+#in list print fist ,last, second number:
+   num = [10,20,30,40]
+   print(num[0]) 
+   print(num[3])
+   print(num[2])
+#also print len
+   print(len(num))
+#add new element in list:
+   num.append(50)
+   print(num)
+
+
+question1(a)# medium level question list operations
+
+#sort the list its mean sorts in ascendind order
+nums = [3,1,4,1,5,9]
+print(nums.sort())
+print(nums)
+
+#how insert new values in index 4 convert into 6
+nums.insert(2,6)
+print(nums)
+
+#how to remove specific value 
+nums.remove(4)
+print(nums)
+
+#list sum or lenght print
+print(sum(nums))
+print(len(nums))
+
+
+
+
+
+
+question2#tuples,indexing
+
+point = (5,10,15,4,6,3,3,4,3)
+print(point[1],point[2])
+#how to change tuple - not change because is immutable sequence
+#point[0] = 56
+print(point)
+#count total repate value
+print(point.count(3))
+#print string in tuples
+point =("a","b","c")
+print(point)
+#empty tuples and how put single value in tuple
+tub1=()#empty
+tub2=(1,)#single ,used comma in single element 
+
+question3#string basics
+
+#length of str also count space
+str = "Python Programming"
+print(len(str))
+#print first letter and last letter:
+print(str[0])
+print(str[17])
+#for uppercase and lowwer case 
+print(str.upper())
+print(str.lower())
+#how to replace letter
+print(str.replace("Programming","coding"))
+
+
+#question3(a)strings function:
+
+str ="Hello world, this is python "
+#to remove extra space 
+print(str.strip())
+#convert into lower case 
+print(str.lower())
+#replace "word" to"universe"
+print(str.replace("world","universe"))
+#how to spilts word 
+print(str.split())
+#output =['Hello', 'world,', 'this', 'is', 'python']
+
+
+
+question4# Dictionary basic
+
+#print  name,age,city:
+student = {
+    "name": "vidyanshu",
+    "age":  20,
+    "city": "meerut"
+
+}
+print(student["name"])
+print(student["age"])
+print(student["city"])
+#how to update age in Dictionary
+student.update({"age":21})
+print(student)
+#how to add new key:
+
+student["marks"] =85
+print(student)
+#question4(a)medium level:#dictionary
+#:upadete & delete
+
+person = {
+     "name":"vidyanshu",
+     "age":22,
+     "city":"meerut",
+    "hobbies":["reading","coding"]
+}
+#upadete age 
+person.update({"age":21})
+print(person)
+#add new hobbies = hobbies are list that why used append
+person["hobbies"].append("music")
+print(person)
+#output={'name': 'vidyanshu', 'age': 21, 'city': 'meerut', 'hobbies': ['reading', 'coding', 'music']}
+
+#for delete city= uesd of pop key+value ko delete
+del person["city"]
+print(person)
+
+#check age are exist or not
+
+if "age" in person:
+    print("age key exist")
+else:
+    print("age key not  exist")
+
+
+question5#set basic question: 
+
+#ignor the duplicate vale 
+set ={1,2,2,3,4,4,5}
+print(set)
+
+#new element add
+set.add(6)
+print(set)
+
+#new element remove
+set.remove(3)
+print(set)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tup2 =(1,)#use comma in single element
