@@ -190,6 +190,96 @@ for student in students:
          top_student = student["name"]
          print("top_student:", top_student,"with marks:",max_marks)
 
+
+#question11 --in list  remove duplicates number using set
+
+nums = [1,2,2,3,4,4,5,5,6]
+new_list = list(set(nums))
+print("original list",nums)
+print("new list",new_list)
+
+#question12 ----count Frequencies(dictionary)
+#list of words
+words =["apple","banana","apple","orange","banana","apple"]
+
+
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1  # Agar word pehle se hai, to count badhao
+    else:
+        word_count[word] = 1   # Agar naya word hai, to dictionary me add karo
+
+print(word_count)
+# Output: {'apple': 3, 'banana': 2, 'orange': 1} 
+
+
+#question13 sring+list+dictionary mix 
+
+str ="apple banana apple orange banana apple"
+
+str_data = "apple banana apple orange banana apple"
+
+# 1. Pehle string ko split karke list banayein
+words_list = str_data.split()
+
+# 2. Dict use karke count nikalein
+word_count = {}
+for word in words_list:
+    word_count[word] = word_count.get(word, 0) + 1
+
+print(word_count)
+# Output: {'apple': 3, 'banana': 2, 'orange': 1}
+print(words_list)
+
+#question 14 nested or dict
+school = {
+    "name": "ABC School",
+    "students": [
+        {"name": "aman", "marks": [80,90,70]},
+        {"name": "vidyanshu", "marks": [85,95,88]}
+    ]
+}
+
+first_student = school["students"][0]
+#first students name 
+print("first student name:",first_student["name"])
+
+#first student marks 
+print("first student marks:",first_student["marks"])
+
+#average marks 
+marks = first_student["marks"]
+total = 0
+
+for mark in marks:
+    total = total + mark
+
+average = total / len(marks)
+
+print("average marks:",average)
+
+#question15 Real style mini problem:
+ 
+products = [
+    {"name": "Laptop","price": 50000,"catergory": "electronics"},
+    {"name": "Phone","price": 20000,"catergory": "electronics"},
+    {"name": "Book","price": 300,"catergory": "study"},
+    {"name": "Pen", "price": 20,"catergory": "study"}
+]
+ 
+electronics_products = []
+total_price = 0
+
+for product in products:
+    total_price = total_price + product["price"]
+    if product["catergory"] == "electronics":
+        electronics_products.append(product)
+        print("electronics_products:")
+        print(electronics_products)
+        print("total price of all products:", total_price)
+
 ===============================================================================================================================================
 Day 2 question while loop date-23/sep/2026
 =============================================================================================================================================
