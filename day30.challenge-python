@@ -416,6 +416,65 @@ print("cube is :",cube(100))
 number = lambda n: "postive" if n > 0 else "negative"
 print(number(-1))
 
+#question 12: waf fizzbuzz(n) that take a single number and print "Fizz" if it's divisible by 3,"Buzz-
+#if it's divisible by5,"Fizzbuzz"if it's divisible by both ,otherwise print the number itself.
+
+def fizzbuzz(n):
+    if n % 3 == 0 and n % 5 == 0:
+        return "Fizzbuzz"
+    elif n % 3 == 0:
+        return "fizz"
+    elif n % 5 ==0:
+        return "Buzz"
+print(fizzbuzz(15))
+
+#question 13: waf power(base,exp) that return base raised to exp using a loop- no**operator or pow() allowed.
+def power(base, exp):
+    result = 1
+    for _ in range(abs(exp)):
+        result *= base
+    return 1 / result if exp < 0 else result
+print(power(3,2))
+
+#question 14: waf tax_calculator(income)that takes annual income and returns the tax amount based on these slabs:
+#up to 250000 - no tax 
+#250001 to 500000 - 5%
+#500001 to 1000000 -10%
+#above 1000000-30%
+
+def tax_calculator(income):
+    if income <= 250000:
+        return "No tax"
+    elif income >= 250001 and income <= 500000:
+        return income * 0.05
+    elif income >= 500001 and income <= 1000000:
+        return income * 0.2
+    return income * 0.3
+
+amount= int(input("enter annual salary :"))
+print("tax on salary :",tax_calculator(amount))
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
