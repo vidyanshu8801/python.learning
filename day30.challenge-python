@@ -329,15 +329,92 @@ while i < len(nums):
     if(nums[i] == x):
         print("found at idx",i)
     i += 1 
+================================================================================================================================================
+Day 3 function ,Parameter and Argument date 24/sep/2026
+=================================================================================================================================================
+#question 1 print greet 
+def greet():
+    print("good morning")
+    print("this is afternoon")
+    print("goodbye")
+greet()
+greet()
+#question 2
+def gree(name,age,gender):
+    print(f"Hey {name}! Your age is {age} and gender is {gender}.")
+
+gree("vidyanshu",21,"male")
 
 
+#question 3 waf called add that takes two number as parameters and print sum:
+def add(a,b):
+    ans = a+b
+    print(f"Add is:",ans)
+a =int(input("enter number a:"))
+b =int(input("enter number b:"))
 
+add(a,b)
+#question 4 waf called rectangle_area that takes length  and breath as parameters and print rectangle_area
+def rectangle_area(l,b):
+    ans = l*b
+    print(f"rectangle_area :",ans)
+l =int(input("enter number l:"))
+b =int(input("enter number b:"))
 
+rectangle_area(l,b)
 
+#question 5:waf called find_max that takes three number as parameters and print larget one :
+def find_max(n1,n2,n3):
+    if n1>n2 and n1>n3:
+        print("Max number is :",n1)
+    elif n2>n1 and n2>n3:
+        print("Max number is :",n2)
+    else:
+        print("Max number is :",n3)
+find_max(46,42,73)
 
+#question 6: waf called discount_price that takes original_price and discount_percent as parameters and print final price after discount:
 
+def discount_price(original_price,discount_percent):
+    discount =(discount_percent /100)*original_price
+    final_price = original_price - discount
+    print("final_price is :",final_price)
 
+discount_price(100,50)
 
+#question 7: waf called  square that takes a number and return its square.store the result and print it.
+
+def square(num):
+    return num*num
+print("square is :",square(2))
+   
+#question8: waf called min_of_three that takes thre number and returns the smallest number without using any built -in-function:
+ 
+def min_of_three(n1,n2,n3):
+    if n1 < n2 and n1 < n3:
+        return n1
+    elif n2 < n3 and n2 < n1:
+        return n2
+    return n3
+print(min_of_three(3,1,0))
+
+#question9: waf called absolute_value(mean all +ve value) that takes a number and returns its absolute value without using any built -in-function:
+def absolute_value(num):
+    if num >= 0:
+        return num
+    return num * -1
+print(absolute_value(100))
+print(absolute_value(-16))
+
+#question 10: using a lambda function that takes a number and return its cube .store it is variable and call it:
+ 
+cube = lambda n: n*n*n
+print("cube is :",cube(100))
+
+#question 11: write a lambda function that takes a number and return"postive",or "negative".
+
+number = lambda n: "postive" if n > 0 else "negative"
+print(number(-1))
 
 
 
