@@ -330,7 +330,268 @@ while i < len(nums):
         print("found at idx",i)
     i += 1 
 ================================================================================================================================================
-Day 3 function ,Parameter and Argument date 24/sep/2026
+Day 3 question on pattern using loop: date 23/sep/2026
+=================================================================================================================================================
+#Question on pattern using loop:
+
+#question 1: print this 
+"""1 2 3 4 5 
+   1 2 3 4 5 
+   1 2 3 4 5 
+   1 2 3 4 5 """
+for i in range(1,6):
+    for j in range(1,6):
+         print(j, end=" ")
+    print()
+
+#question 2: print this
+"""1 1 1 1 1 
+   2 2 2 2 2 
+   3 3 3 3 3 
+   4 4 4 4 4 
+   5 5 5 5 5 """ 
+for i in range(1,6):
+    for j in range(1,6):
+        print(i, end=" ")
+    print()
+#question 3: print this
+"""5 5 5 5 5 
+   4 4 4 4 4 
+   3 3 3 3 3 
+   2 2 2 2 2 
+   1 1 1 1 1 """
+
+for i in range(5,0,-1):
+    for j in range(5,0,-1):
+        print(i, end=" ")
+
+    print()
+#question 4: print this
+""" *
+    * *
+    * * *
+    * * * *
+    * * * * *"""
+
+for i in range(1,6):
+    for j in range(1,i+1):
+       print("*", end=" ")
+    print()
+#question 5:
+"""         
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+"""
+
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+#question 5:
+"""         
+1 
+2 1 
+3 2 1 
+4 3 2 1 
+5 4 3 2 1 
+"""
+n = int(input("enter number:"))
+
+for i in range(1,n+1):
+    for j in range(i,0,-1):
+        print(j,end=" ")
+    print()
+#question 6:
+"""         
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+"""
+for i in range(5,0,-1):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+#question 7:
+"""         
+5 4 3 2 1 
+5 4 3 2 
+5 4 3 
+5 4 
+5 
+"""
+n= int(input("enter number:"))
+for i in range(1,n + 1):
+    for j in range(n,i-1,-1):
+        print(j,end=" ")
+    print()
+#question 8:
+"""         
+5 4 3 2 1 
+4 3 2 1 
+3 2 1 
+2 1 
+1 
+"""
+#n= int(input("enter number:"))
+
+for i in range(6,0,-1):
+    for j in range(i,0,-1):
+        print(j,end=" ")
+    print()
+
+#question 9:
+"""         
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+"""
+#n= int(input("enter number:"))
+
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+for i in range(5,0,-1):
+    for j in range(1,i+1):
+         print(j,end=" ")
+    print()
+    
+## In this first solve half after that copy and paste change the value of start point =5,0,-1 and j=1,i+1
+
+#question 10:
+"""
+5 
+5 4 
+5 4 3 
+5 4 3 2 
+5 4 3 2 1 
+5 4 3 2 
+5 4 3 
+5 4 
+5
+
+"""
+
+for i in range(6,0,-1):
+    for j in range(5,i-1,-1):
+        print(j,end=" ")
+    print()
+for i in range(2,6):
+    for j in range(5,i-1,-1):
+        print(j,end=" ")
+    print()
+            
+#question11 :
+"""
+@ @ @ @ 1 
+@ @ @ 1 2 # this solve with using @ replace to space" ":
+@ @ 1 2 3 
+@ 1 2 3 4 
+1 2 3 4 5 
+        1              
+      1 2 #real output this 
+    1 2 3 
+  1 2 3 4 
+1 2 3 4 5 
+
+"""
+for i in range(1,6):
+    for k in range(1,6-i): 
+        print(" ",end=" ")
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+#question12 :
+"""
+@ @ @ @ 5 
+@ @ @ 5 4 
+@ @ 5 4 3 
+@ 5 4 3 2 
+5 4 3 2 1 
+        5 
+      5 4 #for real output to change @ into space  print(" ",end=" ") :
+    5 4 3 
+  5 4 3 2 
+5 4 3 2 1
+
+"""
+
+for i in range(5,0,-1):
+    for k in range(1,i): 
+        print("@",end=" ")
+    for j in range(6,i-1,-1):
+            print(j,end=" ")
+    print()
+
+#question13 :
+"""
+@ @ @ @ 1 ##use @ in space:  print(" ", end=" "):all @ are remove:
+@ @ @ 1 2 3 
+@ @ 1 2 3 4 5 
+@ 1 2 3 4 5 6 7 
+1 2 3 4 5 6 7 8 9 
+@ 1 2 3 4 5 6 7 
+@ @ 1 2 3 4 5 
+@ @ @ 1 2 3 
+@ @ @ @ 1 
+
+"""
+
+for i in range(1,6):
+    for j in range(1,5-i+1):
+        print(" ", end=" ")
+    for k in range(1,i*2): 
+        print(k, end=" ")
+    print()
+for i in range(4,0,-1):
+        for j in range(1,5-i+1):
+            print(" ", end=" ")
+        for k in range(1,i*2): 
+            print(k, end=" ")
+        print()
+
+#question14 : print diamond shape *
+"""
+@ @ @ @ *   ## remove only @ in this: print("@", end=" ")
+@ @ @ * * * 
+@ @ * * * * * 
+@ * * * * * * * 
+* * * * * * * * * 
+@ * * * * * * * 
+@ @ * * * * * 
+@ @ @ * * * 
+@ @ @ @ * 
+"""
+for i in range(1,6):
+    for j in range(1,5-i+1):
+        print("@", end=" ")
+    for k in range(1,i*2): 
+        print("*", end=" ")
+    print()
+for i in range(4,0,-1):
+        for j in range(1,5-i+1):
+            print("@", end=" ")
+        for k in range(1,i*2): 
+            print("*", end=" ")
+        print()
+
+================================================================================================================================================
+Day 4 : function ,Parameter and Argument date 25/sep/2026
 =================================================================================================================================================
 #question 1 print greet 
 def greet():
