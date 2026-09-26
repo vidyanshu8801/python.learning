@@ -714,8 +714,124 @@ def tax_calculator(income):
 
 amount= int(input("enter annual salary :"))
 print("tax on salary :",tax_calculator(amount))
-    
+================================================================================================================================================    
+Day5:Pratice question list:theory+question
+=================================================================================================================================================
+#question1:Find out  max number without useing in built(max) function:
 
+nums = [6,-5,4,2,10,91,-75,49,9]
+
+maxi = float("-inf")
+for i in nums:
+    if i > maxi:
+        maxi = i
+print(f"Maximun number = {maxi}")   #output=Maximun number = 91
+
+#question2:wap that takes a list and a target number. 
+#use a loop to determine if the target number eixsts in a list .Do not use the in operation.
+
+
+def does_target_exists(lst,target):
+    for num in lst:
+        if num == target:
+            return True 
+    return False
+   
+nums = [6,-5,4,2,10,91,-75,49,9] 
+
+print(does_target_exists(nums, 18))
+
+#question3:Give a list of numbers, use a loop to calculate and print their average. 
+
+
+def calculate_avg(lst):
+
+    n =len(nums)
+    total =0    
+    for i in nums:
+        total = total + i 
+    return total/n
+
+nums = [6,-5,4,2,10,91,-75,49,9] 
+ans = calculate_avg(nums)
+
+print(f"Average is = {ans:.2f}")
+
+#question4: GIve list of the same lenght,wpc using a loop to create a new list where each elemrnt is the
+#sum of the corresponding element from both original lists.
+
+def sum_of_two_lists(lst1,lst2):
+    new_list = []
+    n = len(lst1)
+    for i in range(0,n):
+        total = lst1[i] + lst2[i]
+        new_list.append(total)
+    return new_list
+
+nums1 = [6,-5,4,2,10,91,-75,49,9]
+nums2 = [4,1,54,76,41,85,3,44,2]
+
+ans = sum_of_two_lists(nums1,nums2)
+print(ans)
+
+#question5: if the list sorted print True and lst not sorted print False:use loop 
+ 
+def if_sorted(lst):
+    n=len(lst)
+    for i in range(0,n-1):
+        if lst[i] > lst[i+1]:
+            return False
+    return True
+
+nums = [3,4,8,9,13,17,18,23,45,58,79,100]
+
+print(if_sorted(nums))
+
+#question 6: Find the largest and smallest number in a list without using built-in-function like max() or min()
+ 
+def find_number(numbers):
+    largest = numbers[0]
+    smallest = numbers[0]
+
+    for num in numbers:
+        if num > largest:
+            largest = num 
+        if num < smallest:
+            smallest = num
+    return largest, smallest
+
+nums = [6,-5,4,2,10,91,-75,49,9]
+largest = find_number(nums)
+smallest = find_number(nums)
+print(f"largest = {largest}")
+print(f"smallest ={smallest}")
+
+#question 7: Reverse a list without using the .Reverse() method or list slicing():
+
+def reverse_lst(lst):
+    n = len(lst)
+    new_lst = []
+    for i in range(n-1,-1,-1):
+        new_lst.append(lst[i])
+    return new_lst
+
+
+nums = [3,4,8,9,13,17,18,23,45,58,79,100]
+print(reverse_lst(nums))
+
+#question 8:give two list, merge them into single new list without modifiying the orinigal:
+
+def merge_two_lst(lst1,lst2):
+    new_lst=[]
+    for num in lst1:
+        new_lst.append(num)
+    for num in lst2:
+        new_lst.append(num)
+    return new_lst
+
+num1 =[1,2,3]
+num2 =[4,5,6]
+print(merge_two_lst(num1,num2))
 
 
 
