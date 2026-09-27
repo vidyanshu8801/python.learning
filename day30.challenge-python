@@ -832,6 +832,111 @@ def merge_two_lst(lst1,lst2):
 num1 =[1,2,3]
 num2 =[4,5,6]
 print(merge_two_lst(num1,num2))
+===============================================================================================================================================
+#Day6: list on comprehension and nested list:
+=============================================================================================================================================
+#question 1:Given a 3x3 matrixs as input, print its lower triangle.
+#replace all the element in the upper triangle (above the main diagonal) with an asterisk("*")
+matrixs = [      #output 1 * * 
+                         4 5 * 
+                         7 8 9 
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    ]
+
+row = len(matrixs)
+colums = len(matrixs[0])
+
+for i in range(0,row):
+    for j in range(0,colums):
+        if i >= j:
+            print(matrixs[i][j],end=" ")
+        else:
+            print("*",end=" ")
+    print()
+
+
+#question2:Given a 3x3 matrixs as input, print its lower triangle.
+#replace all the element in the lower triangle (above the main diagonal) with an asterisk("*")
+#output 1 2 3 
+        * 5 6 
+        * * 9
+matrix = [      
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
+row = len(matrix)
+colums = len(matrix[0])
+for i in range(0,row):
+    for j in range(0,colums):
+        if i <= j:
+            print(matrix[i][j],end=" ")
+        else:
+            print("*",end=" ")
+    print()
+#question3:Given a 3x3 matrixs as input, print its lower triangle.(only print diagonal)
+#replace all the element in the lower triangle and upper triangle  with an asterisk("*")
+#output:1 * * 
+        * 5 * 
+        * * 9 
+matrix = [      
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
+row = len(matrix)
+colums = len(matrix[0])
+for i in range(0,row):
+    for j in range(0,colums):
+        if i == j:
+            print(matrix[i][j],end=" ")
+        else:
+            print("*",end=" ")
+    print()
+#question4:Given a 3x3 matrixs as input, print its lower triangle.(only print diagonal)
+#replace all the element in the lower triangle and upper triangle  with an asterisk("*")
+#output:* * 3 
+        * 5 * 
+        7 * * 
+matrix = [      
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
+row = len(matrix)
+colums = len(matrix[0])
+for i in range(0,row):
+    for j in range(0,colums):
+        if i + j== 2:
+            print(matrix[i][j],end=" ")
+        else:
+            print("*",end=" ")
+    print()
+
+#question4:Given a 4x4 print only boarder element replace the inner element with an asterisk("*")
+
+#output1 2 3 4 
+       5 * * 8 
+       9 * * 12 
+      13 14 15 16 
+
+matrix = [      
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12],
+    [13,14,15,16],
+]
+row = len(matrix)
+colums = len(matrix[0])
+for i in range(0,row):
+    for j in range(0,colums):
+        if i == 0 or i ==3 or j == 0 or j == 3:
+            print(matrix[i][j],end=" ")
+        else:
+            print("*",end=" ")
+    print()
 
 
 
