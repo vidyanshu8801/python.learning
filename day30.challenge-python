@@ -915,7 +915,7 @@ for i in range(0,row):
             print("*",end=" ")
     print()
 
-#question4:Given a 4x4 print only boarder element replace the inner element with an asterisk("*")
+#question5:Given a 4x4 print only boarder element replace the inner element with an asterisk("*")
 
 #output1 2 3 4 
        5 * * 8 
@@ -937,6 +937,40 @@ for i in range(0,row):
         else:
             print("*",end=" ")
     print()
+
+#Question:6 make a list from 1to10:
+ 
+new_list=[i for i in range(1,11)]
+print(new_list)
+
+#Question:7 make a list from10to1:
+new_list=[i for i in range(11,-1,-1)]
+print(new_list)
+
+#Question:8 make a list from 1 to 10 with square:
+new_list=[i*i for i in range(1,11)]
+print(new_list)
+
+#Question:9 make a list from 1 to 20 only even number:
+new_list=[i for i in range(1,21) if i % 2==0]
+print(new_list)
+
+#Question:10 make a list from 1 to 100 only prime number:
+def is_prime(lst):
+    factor = 0
+    for i in range(1,lst+1):
+        if lst % 1 == 0:
+            factor  += 1
+        if factor == 2:
+            return True
+    return False
+
+new_list=[i for i in range(2,101) if is_prime(i) == True]
+print(new_list)
+ 
+
+
+
 
 
 
