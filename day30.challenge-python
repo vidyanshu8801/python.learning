@@ -967,7 +967,232 @@ def is_prime(lst):
 
 new_list=[i for i in range(2,101) if is_prime(i) == True]
 print(new_list)
- 
+==================================================================================================================================================== 
+Day7: Dictionary with practice question
+=====================================================================================================================================================
+#Built function dictionary:
+marks = {
+    "history":94,
+    "hindi": 100,
+    "gk": 10,
+    "math":85,
+    "science":96,
+    "english":86,
+}
+
+#1: len() length:
+n = len(marks)
+print(n) #output 6
+
+#2: min()/max():
+print(min(marks.values())) #output is 85
+print(min(marks)) #output english becuse min() search word who come first that why used print(min(marks.values()))
+#max()
+print(max(marks.values())) #output is 100
+print(max(marks)) #output science becuse max() search word which letter value max 
+
+#3.sorted
+
+
+
+students = {
+    "name":"vidyanshu",
+    "age": 21,
+    "city": "meerut",
+    "math":85,
+    "science":96,
+    "english":86,
+}
+
+# To acess the element in dict:
+print(students) # output:{'name': 'vidyanshu', 'age': 21, 'city': 'meerut', 'math': 85, 'science': 96, 'english': 86}
+#to access one element value in dict:
+print(students["name"]) #output:vidyanshu
+#when the element not exist:
+#print(student["sdj"]) #output:NameError: name 'student'
+
+# method of access value:
+#first method: .get() method
+
+subject= "math"
+ans= students.get(subject)
+if ans is None:
+    print("subject not found")
+else:
+    print(f"marks score ={ans}") #output is marks score =85
+    
+#Adding and update values:
+
+#update;
+print(students,id(students)) #output: memory location is 277809046870720
+students["age"] = 30 
+print(students)
+print(students,id(students)) #output : memory location is 277809046870720
+#output:{'name': 'vidyanshu', 'age': 30, 'city': 'meerut', 'math': 85, 'science': 96, 'english': 86}
+# it also update in memory loction
+
+#Adding
+print(students,id(students))
+students["gender"] = "male"
+print(students)
+print(students,id(students)) #both have same memory location change and update
+#{'name': 'vidyanshu', 'age': 30, 'city': 'meerut', 'math': 85, 'science': 96, 'english': 86, 'gender': 'male'} 276742321199808
+#otherway to update
+students.update({"country":"India"}) 
+print(students)
+
+#Remove item in dict: there are three way to 1.,.pop() 2. .clear() 3. delete(del)
+
+# .pop()
+students.pop("country")
+print(students) # output: remove country = india also do same memory location
+
+# .clear
+"""students.clear()
+print(students)"""#output only empty dict like this {}
+
+#del also delete
+del students["age"]
+print(students) # output delete age and print {'name': 'vidyanshu', 'city': 'meerut', 'math': 85, 'science': 96, 'english': 86, 'gender': 'male'}
+
+# checkin if a key exists- they return only true or False
+print("age" in students) #output:False
+print("name" in students)#output:True
+
+#dictionar method 1.(.keys()) 2.(.values()) 3.(.items())
+
+#.keys()
+
+print(students.keys())
+#output:dict_keys(['name', 'city', 'math', 'science', 'english', 'gender'])
+
+
+#using iteration we can access  the keys and values:
+for sub in students.keys():
+    print(sub,students[sub],end=" ") 
+#output:name vidyanshu city meerut math 85 science 96 english 86 gender male 
+
+#also so sum of total marks:
+marks = {
+    "history":94,
+    "hindi": 100,
+    "gk": 100,
+    "math":85,
+    "science":96,
+    "english":86,
+}
+
+total = 0
+for sub in marks.keys():
+    print(sub,marks[sub],end=" ") 
+    total += marks[sub]
+print(f"Total marks is {total}") #output: Total marks is 561
+
+
+#.values method
+print(marks.values()) #output:dict_values([94, 100, 100, 85, 96, 86])
+
+#.items() methods
+
+print(marks.items()) #print keys and values
+
+#output:dict_items([('history', 94), ('hindi', 100), ('gk', 100), ('math', 85), ('science', 96), ('english', 86)])
+
+#practice question:
+#question 1: calculate and print the total marks and averge marks obtained:
+
+def max_score(marks):
+    n = len(marks)
+    total = 0
+    for mark in marks.values():
+        total += mark
+    
+    average = total / n
+    print(f"Total marks is {total} and average is {average}")
+
+
+marks = {
+    "vidyanshu":94,
+    "abhey": 100,
+    "gk": 100,
+    "ansh":85,
+    "abhishek":96,
+    "akash":86,
+}
+max_score(marks)
+
+#question 2:Loop through it print the name of all students who achieved a score above 75:
+def max_score(marks):
+    for name,mark in students.items():
+        if mark > 90:
+            print(f"student name is {"name"} and mark is {mark}")
+
+students = {
+    "vidyanshu":94,
+    "abhey": 100,
+    "gk": 100,
+    "ansh":85,
+    "abhishek":96,
+    "akash":86,
+}
+print(max_score(students))
+
+#question3: wap function named merge dict1 and dict2 that accepst two dictionary (d1andd2) as argument and return 
+# a newdict formed by mereging them using the update() methods. ensure d1 remains unchange:
+
+def named_merge(d1):
+    new_d3 = {}
+    new_d3.update({"a":1,"b":2,"c":3})
+    new_d3.update({"d":4,"e":5,"c":6})
+    return new_d3
+
+
+d1 = {"a":1,"b":2,"c":3}
+d2 = {"d":4,"e":5,"c":6}
+ans = named_merge(d1)
+print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
