@@ -1151,6 +1151,127 @@ d1 = {"a":1,"b":2,"c":3}
 d2 = {"d":4,"e":5,"c":6}
 ans = named_merge(d1)
 print(ans)
+============================================================================================================================
+Day:8 #Nested dictionaries(part 1: inside dict)
+==========================================================================================================================
+students = {
+    "101": {"name":"vidyanshu","age":21,"city":"delhi"},
+    "102": {"name":"Abhisehek","age":22,"city":"ballia"},
+    "103": {"name":"anshu","age":24,"city":"meerut","details":{"ph":3676986,"gender":"male"},},
+
+}
+#How to access :
+print(students["101"]) #{'name': 'vidyanshu', 'age': 21, 'city': 'delhi'}
+
+print(students["103"]["name"])# output:anshu
+print(students["103"]["details"])#output:{'ph': 3676986, 'gender': 'male'}
+
+print(students["103"]["details"]["ph"])#output:3676986
+
+
+#How to acces values through iteration:
+for k,v in students.items():
+    print(f"details is {k} and values is {v}")
+""" output:
+details is 101 and values is {'name': 'vidyanshu', 'age': 21, 'city': 'delhi'}
+details is 102 and values is {'name': 'Abhisehek', 'age': 22, 'city': 'ballia'}
+details is 103 and values is {'name': 'anshu', 'age': 24, 'city': 'meerut', 'details': {'ph': 3676986, 'gender': 'male'}}
+
+"""
+for values in students:
+    print(values) #output 101, 102, 103
+
+#to access praticular element like name:
+for details,value in students.items():
+    print(f" details={details}, and name = {value["name"]}, and age = {value["age"]}")
+
+""" details=101 and name = vidyanshu, and age = 21
+    details=102 and name = Abhisehek, and age = 22
+    details=103 and name = anshu, and age = 24
+
+"""
+# add the total age 
+total = 0
+for details,value in students.items():
+    total  += value["age"]
+    print(f" details={details}, and name = {value["name"]}, and age = {value["age"]}")
+
+print(total) #output:67
+====================================================================================================================================
+#Nested dictionaries(part 2: list inside dict):
+====================================================================================================================================
+students = {
+    "name": "vidyanshu",
+    "age": 21,
+    "subjects": ["math","science","english"], # list inside dictionaries
+    "marks": [85,95,90],
+}
+
+#How to access list inside dicts:
+print(students["name"]) #output:vidyanshu
+
+print(students["subjects"]) #output:['math', 'science', 'english']
+
+#using slicing indx to acces list:
+print(students["subjects"][0])#output:math
+====================================================================================================================================
+#Sorting nested data with lambda:
+====================================================================================================================================
+#soting a dicts using value:
+
+marks = {"history":94, "hindi": 100, "gk": 100,  "math":85,"science":96, "english":86}
+print(marks.items())
+
+#output: he give tuple:
+#dict_items([('history', 94), ('hindi', 100), ('gk', 100), ('math', 85), ('science', 96), ('english', 86)])
+
+#first of all covert into dict 
+
+ans = dict(sorted(marks.items(),key=lambda x : x[1]))
+print(ans)
+
+#arrange by value assceding order
+#{'math': 85, 'english': 86, 'history': 94, 'science': 96, 'hindi': 100, 'gk': 100}
+
+
+#arrange by letter asscending order:
+ans = dict(sorted(marks.items(),key=lambda x : x[0]))
+print(ans)
+#output:{'english': 86, 'gk': 100, 'hindi': 100, 'history': 94, 'math': 85, 'science': 96}
+
+#question 1: sorted the dict behalf of last marks:
+marks = {
+    "vidyansh": [43,12,98,10,22],
+    "abhishek": [76,55,34,89,61],
+    "ansh": [20,45,67,30,88],
+    "abhey": [91,73,50,14,62],
+    "akash": [38,82,47,95,29],
+
+}
+
+ans = dict(sorted(marks.items(),key=lambda x: x[1][4]))
+print(ans)
+"""output assending order behalf of last mark:
+{'vidyansh': [43, 12, 98, 10, 22], 'akash': [38, 82, 47, 95, 29], 
+'abhishek': [76, 55, 34, 89, 61], 'abhey': [91, 73, 50, 14, 62], 
+'ansh': [20, 45, 67, 30, 88]}
+"""
+
+#for uniform data like this(only focus on last elemnt)
+mark = {
+    "vidyansh": [43,12,98,10,22],
+    "abhishek": [76,55,34],
+    "ansh": [20,45],
+    "abhey": [91,73,50],
+    "akash": [38,82,47,95],
+
+}
+ans = dict(sorted(mark.items(),key=lambda x: x[1][-1])) #-1 show last elemnt
+print(ans)
+"""
+{'vidyansh': [43, 12, 98, 10, 22], 'abhishek': [76, 55, 34],
+ 'ansh': [20, 45], 'abhey': [91, 73, 50], 'akash': [38, 82, 47, 95]}
+"""
 
 
 
