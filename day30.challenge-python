@@ -33,11 +33,6 @@ print(nums)
 print(sum(nums))
 print(len(nums))
 
-
-
-
-
-
 question3#tuples,indexing
 
 point = (5,10,15,4,6,3,3,4,3)
@@ -166,9 +161,6 @@ result = b.difference(a)
 print(result)
 #elements that are unique to each set.=symmetric difference output={1, 2, 3, 6, 7}
 print(a^b)
-
-
-
 
 students = [
      {"name": "vidyanshu", "marks": 85},
@@ -1272,6 +1264,83 @@ print(ans)
 {'vidyansh': [43, 12, 98, 10, 22], 'abhishek': [76, 55, 34],
  'ansh': [20, 45], 'abhey': [91, 73, 50], 'akash': [38, 82, 47, 95]}
 """
+# sorting on the basics of total marks 
+
+ans = dict(sorted(mark.items(),key=lambda x: sum(x[1]))) #using sum 
+print(ans)
+
+""" assending order according to total marks
+{'ansh': [20, 45], 'abhishek': [76, 55, 34], 'vidyansh': [43, 12, 98, 10, 22], 
+'abhey': [91, 73, 50], 'akash': [38, 82, 47, 95]}
+"""
+
+# sorting on the basics of total max marks 
+
+ans = dict(sorted(mark.items(),key=lambda x: sum(x[1]),reverse = True)) 
+print(ans)
+
+"""on the basic of maximum marks
+{'akash': [38, 82, 47, 95], 'abhey': [91, 73, 50], 'vidyansh': [43, 12, 98, 10, 22], 
+'abhishek': [76, 55, 34], 'ansh': [20, 45]}
+"""
+
+====================================================================================================================================================
+#question 1: sorted to dict in dict:
+====================================================================================================================================================
+#on the basics of (anyone element like maths)  arrang in assending  order
+marks = {
+    # 0th index   1th        2th          3th
+    "vidyansh": {"math":87,"science":92,"english":74},
+    "abhishek": {"math":65,"science":78,"english":90},
+    "ansh": {"math":55,"science":60,"english":48},
+    "abhey":{"math":95,"science":88,"english":82},
+    "akash": {"math":70,"science":45,"english":63},
+
+}
+ans = dict(sorted(marks.items(), key = lambda x: x[1]["math"]))
+print(ans)
+
+"""you can on the basic of one element or (key)  arrange in assending order
+{'ansh': {'math': 55, 'science': 60, 'english': 48}, 
+'abhishek': {'math': 65, 'science': 78, 'english': 90}, 
+'akash': {'math': 70, 'science': 45, 'english': 63}, 'vidyansh':
+ {'math': 87, 'science': 92, 'english': 74}, 'abhey': 
+ {'math': 95, 'science': 88, 'english': 82}}
+
+"""
+#onthe basics of deassending order:
+ans = dict(sorted(marks.items(), key = lambda x: x[1]["math"],reverse = True))
+print(ans)
+
+#on the basic of total marks score: asscendin order
+#one way to solve:
+ans = dict(sorted(marks.items(), key = lambda x: x[1]["math"]+x[1]["science"]+x[1]["english"]))
+print(ans)
+"""
+  {'ansh': {'math': 55, 'science': 60, 'english': 48},
+  'akash': {'math': 70, 'science': 45, 'english': 63}, 
+  'abhishek': {'math': 65, 'science': 78, 'english': 90}, 
+  'vidyansh': {'math': 87, 'science': 92, 'english': 74}, 
+ 'abhey': {'math': 95, 'science': 88, 'english': 82}}
+
+"""
+#second way to solve easy :
+
+ans = dict(sorted(marks.items(), key = lambda x: sum(x[1].values()))) #use only this sum(x[1].values())
+print(ans)
+
+#deccending order:
+ans = dict(sorted(marks.items(), key = lambda x: sum(x[1].values()),reverse = True)) #use only this sum(x[1].values()),reverse = True)
+print(ans)
+"""{'abhey': {'math': 95, 'science': 88, 'english': 82}, 
+'vidyansh': {'math': 87, 'science': 92, 'english': 74}, 
+'abhishek': {'math': 65, 'science': 78, 'english': 90}, 
+'akash': {'math': 70, 'science': 45, 'english': 63},
+ 'ansh': {'math': 55, 'science': 60, 'english': 48}}
+
+
+
+
 
 
 
