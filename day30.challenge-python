@@ -1285,7 +1285,7 @@ print(ans)
 """
 
 ====================================================================================================================================================
-#question 1: sorted to dict in dict:
+#question 9: sorted to dict in dict:
 ====================================================================================================================================================
 #on the basics of (anyone element like maths)  arrang in assending  order
 marks = {
@@ -1337,6 +1337,107 @@ print(ans)
 'abhishek': {'math': 65, 'science': 78, 'english': 90}, 
 'akash': {'math': 70, 'science': 45, 'english': 63},
  'ansh': {'math': 55, 'science': 60, 'english': 48}}
+
+===========================================================================================================================================
+Day10: Strings
+===========================================================================================================================================
+# String in python:
+#we can write in '',"",""" """ qoute
+str1 ="vidyanshu"
+print(str1)
+print(type(str1))
+
+#also put address like this:
+address ="flate no 41 ,meerut uttar pradesh"
+print(address)
+print(type(address))
+
+#String are immutable:
+name ="vidyanshu" # can't change string in same addres 
+#name[0] = "z"#TypeError: 'str' object does not support item assignment
+print(name)
+#override, both memory location diff:
+name = "sanjay"
+print(name)
+
+#Indexing string:
+
+name = "vidyanshu"
+
+#postive indexing:
+print(name[0]) #output:v
+#negative indexing:
+print(name[-1])#output:v
+
+#slicing in string:
+print(name[0:9])#output:vidyanshu
+
+print(name[9::-1])#output:uhsnaydiv
+
+#concatenation and repetition:
+
+a = "vidyanshu"
+b = "gupta"
+print(a+b)#vidyanshugupta
+print(a+" "+b) #vidyanshu gupta
+
+#repetition using (*):
+print(a*2) #output vidyanshuvidyanshu
+
+#loop through a string:
+
+first = "vidyanshu"
+n = len(first)
+for i in range(0,n):
+    print(i,end=" ") #output:0 1 2 3 4 5 6 7 8 
+
+#otherway:
+for i in first:
+    print(i,end=" ") #output:v i d y a n s h u 
+
+# using enumerate(): both char and idx print:
+
+for indx,ch in enumerate(first):
+    print(f"index is {indx} and ch is {ch}")
+"""
+output :
+index is 1 and ch is i
+index is 2 and ch is d
+index is 3 and ch is y
+index is 4 and ch is a
+index is 5 and ch is n
+index is 6 and ch is s
+index is 7 and ch is h
+index is 8 and ch is u
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
