@@ -1342,6 +1342,7 @@ print(ans)
 Day9: Strings
 ===========================================================================================================================================
 # String in python:
+
 #we can write in '',"",""" """ qoute
 str1 ="vidyanshu"
 print(str1)
@@ -1351,25 +1352,27 @@ print(type(str1))
 address ="flate no 41 ,meerut uttar pradesh"
 print(address)
 print(type(address))
-
+==========================
 #String are immutable:
+==========================
 name ="vidyanshu" # can't change string in same addres 
 #name[0] = "z"#TypeError: 'str' object does not support item assignment
 print(name)
 #override, both memory location diff:
 name = "sanjay"
 print(name)
-
+==========================
 #Indexing string:
-
+==========================
 name = "vidyanshu"
 
 #postive indexing:
 print(name[0]) #output:v
 #negative indexing:
 print(name[-1])#output:v
-
+==========================
 #slicing in string:
+==========================
 print(name[0:9])#output:vidyanshu
 
 print(name[9::-1])#output:uhsnaydiv
@@ -1383,9 +1386,9 @@ print(a+" "+b) #vidyanshu gupta
 
 #repetition using (*):
 print(a*2) #output vidyanshuvidyanshu
-
+==========================
 #loop through a string:
-
+==========================
 first = "vidyanshu"
 n = len(first)
 for i in range(0,n):
@@ -1411,6 +1414,155 @@ index is 7 and ch is h
 index is 8 and ch is u
 """
 
+========================================================================================================
+#string methods : searching ang replace: not change in string ,change in differnt memory address
+========================================================================================================
+str = "vidyanshu is a coder"
+
+#1.(.count()): also count space
+
+print(str.count("s")) #output:2
+print(str) #vidyanshu is a coder ,because change diff memory address
+
+
+#2.(.find()):first occurence and return index:
+
+print(str.find("s")) #output 6
+print(str) #vidyanshu is a coder ,because change diff memory address
+
+
+#3.(.index()): give index also error when the element not found:
+
+print(str.index("coder")) #output 15
+#print(str.index("jvav")) #output ValueError: substring not found
+print(str) #vidyanshu is a coder ,because change diff memory address
+
+
+#4.(.replace): substitute substring :
+
+print(str.replace("coder","hacker")) #vidyanshu is a hacker
+print(str) #vidyanshu is a coder ,because change diff memory address
+========================================================================================================
+#string methods: splitting and joining: all change into override or diff memory address.
+========================================================================================================
+#split: string convert into list:
+
+name = "vidyanshu is a coder"
+
+print(list(name))
+#when i convert into list output:['v', 'i', 'd', 'y', 'a', 'n', 's', 'h', 'u', ' ', 'i', 's', ' ', 'a', ' ', 'c', 'o', 'd', 'e', 'r']
+
+#when i used split:
+print(name.split()) #output ['vidyanshu', 'is', 'a', 'coder']
+
+#also do this:
+print(name.split("a"))#output ['vidy', 'nshu is ', ' coder'] bez spilt into where (a) are found
+
+
+#joining() combine list into string:
+
+my_list = ["v","i","d","y","a","n","s","h","u"]
+
+print(str(my_list)) #ouput ['v', 'i', 'd', 'y', 'a', 'n', 's', 'h', 'u']
+
+#when i used join():
+print("".join(my_list)) #vidyanshu
+print(" ".join(my_list))#with space output is v i d y a n s h u
+
+
+#what happens when i add int number :
+
+my_list = ["v","i","d","y","a","n","s","h","u",5]
+#print("".join(my_list)) show error TypeError: sequence item 9: expected str instance, int found
+
+ans = "".join(str(ch) for ch in my_list)#vidyanshu5 bez int convert into str: 
+print(ans)
+print(type(ans)) #<class 'str'>
+
+==========================================================================================================================================
+#question 1: you have str and wap to convert into reversed order:
+
+str1 = "vidyanshu is a good coder and is learning python"
+
+ans = str1.split()
+ans = ans[::-1]
+print(" ".join(ans))#python learning is and coder good a is vidyanshu
+
+#question 2: email validation : take an email as input .validate that it contains exactly  one @ and atleast one .(dot).print vaild or not vaild
+
+
+def email_checker(email:str):                    
+    if email.count("@") == 1 and "." in email:
+        return "vaild email"
+    return "not vaild"
+email = input("enter your email:")
+
+print(email_checker(email))
+
+#question3: take a phone as input in the format +91-98366-36737. remove all dashes and the countury code. print the cleaned 10 digit number:
+
+
+def ph_num(ph_number:str):
+    ph_number = ph_number.replace("-", "")
+    ph_number = ph_number.replace("+91", "")
+    print(ph_number)
+      
+ph_number = "+91-73643-83734"
+ph_num(ph_number)
+
+#question4: taka a senstence as input. split it into words and print how many words star with a vowel:
+
+def count_vowel(name:str):
+    vowels = "aeiouAEIOU"
+    count = 0
+    words = name.split()
+    for word in words:
+        if word[0] in vowels:
+            count += 1
+    return count
+
+name = "vidyanshu is a good coder and is learning python "
+print(count_vowel(name))
+
+#question5: take a list of name as input(comma seprated).split them ,sort them alphabetically and join them back with "|" as sperator:
+
+
+name = "charlies,Alice,Ethan,Bob,Diana"
+ans=name.split(",")
+print("|".join(ans)) #output charlies|Alice|Ethan|Bob|Diana
+
+#ouestion6: take as input file name (like report.pdf).check if it ends with .pdf , .docx,or .txt and print the file type:
+
+def check_filetype(filename:str):
+    if filename.endswith(".pdf") or filename.endswith(".doc") or filename.endswith(".docx") and filename.endswith(".txt"):
+        print("vaid file")
+    else:
+        print("not vaild")
+
+filename= "report.mp2"
+check_filetype(filename)
+
+#question6:find the longest word give sentence:
+
+def longest_sent(name:str):
+    words = name.split()
+    longest_count = 0
+    longest_word = ""
+    for word in words:
+        if len(word) > longest_count:
+            longest_count = len(word)
+            longest_word = word
+    print(longest_word)
+
+name = "vidyanshu is a good coder and is learning python "
+longest_sent(name)
+
+#otherways to solve:
+name = "vidyanshu is a good coder and is learning python "
+words = name.split()
+print(max(words,key = lambda x: len(x)))
+============================================================================================================================================
+============================================================================================================================================
 
 
 
