@@ -1562,7 +1562,94 @@ name = "vidyanshu is a good coder and is learning python "
 words = name.split()
 print(max(words,key = lambda x: len(x)))
 ============================================================================================================================================
+Day10 : revision list:
 ============================================================================================================================================
+lst = [] #empty list:
+#how to create a list:
+name = ["vidyanshu","abhishek",66,76.5,True]
+print(name)#['vidyanshu', 'abhishek', 66, 76.5, True]
+print(type(name))#<class 'list'>
+
+
+
+#operation on list:+,-,*,/:
+name = ["vidyanshu","abhishek",66,76.5,True]
+#(*)multiple:
+print(name*0,id(name)) #multiple by give empty list[]
+print(name*2)#['vidyanshu', 'abhishek', 66, 76.5, True, 'vidyanshu', 'abhishek', 66, 76.5, True]
+
+#only with two list:
+a = [1,2,3,4]
+b=[5,6,8,9]
+c = [4,3,2,1]
+print(a+b) #[1, 2, 3, 4, 5, 6, 8, 9]
+print(a+c)#[1, 2, 3, 4, 4, 3, 2, 1] allowed dupicate value:
+
+#Built-in-function:
+
+str = [34,45,46,76,98,67,34]
+print(len(str))
+print(min(str))
+print(max(str))
+print(sorted(str))#arrange in asscending order
+print(sorted(str,reverse = True))#arrange in dessending order
+
+
+#access  list element: through indexing
+
+str2 = ["vidyanshu","abhishek","sanjay",45,45.5,True]
+n = len(str2)
+print(str2[0:n])#['vidyanshu', 'abhishek', 'sanjay', 45, 45.5, True
+
+#update the list:
+str2[1] = "gupta"
+print(str2)
+
+str2.append("gujjar")
+print(str2)
+
+#looping through list:
+marks = [45,67,35,90,86,76,47,34,65,23,78,90]
+n = len(marks)
+for i in range(0,n):
+    print(i,end=" ")#used when i need ide:
+for i in marks:
+    print(i,end=" ")
+
+
+i = 0
+while i < len(marks):
+    value = marks[i]
+    print(f"index = {i} and value = {value}")
+    i +=1
+        
+for index,value in enumerate(marks):
+    print(f"index = {i} and value = {value}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
