@@ -1626,6 +1626,207 @@ while i < len(marks):
 for index,value in enumerate(marks):
     print(f"index = {i} and value = {value}")
 
+============================================================================================================================================
+Day11 : oop= object oriented programming:
+============================================================================================================================================
+#how to create class:
+class Student:
+    #attribute
+    name =""
+    roll_no = 0
+    branch = ""
+    gender = ""
+    age = 0
+    
+Student1 = Student()
+print(Student1)
+
+
+#How to add data and print:
+
+Student1.name ="vidyanshu"
+Student1.roll_no = 1001
+Student1.branch ="computer science and engg"
+Student1.gender = "male"
+Student1.age = 23
+
+print(Student1.name)
+print(Student1.roll_no)
+print(Student1.branch)
+print(Student1.gender)
+print(Student1.age)
+
+#there is problem i store data manually  and print also manually and lot of code i write :
+
+#I can do this :
+
+class Students:
+    #attribute
+    name =""
+    roll_no = 0
+    branch = ""
+    gender = ""
+    age = 0
+    
+    #methods i take data from user:
+    def set_details(self):
+        self.name = str(input("enter your name :"))
+        self.roll_no = int(input("enter your roll_no :"))
+        self.branch = str(input("enter your branch :"))
+        self.gender = str(input("enter your gender :"))
+        self.age = int(input("enter your age :"))
+
+    def display_details(self) -> None:
+        print(f"name is {self.name}")
+        print(f"roll_no is {self.roll_no}")
+        print(f"branch is {self.branch}")
+        print(f"gender is {self.gender}")
+        print(f"age is {self.age}")
+ #Student1 = Students()
+ #Student1.set_details()
+#Student1.display_details()
+
+# also do this diff for set_details:
+
+class Students:
+    #attribute # this fuction also work without give attribute
+    name =""
+    roll_no = 0
+    branch = ""
+    gender = ""
+    age = 0
+    
+    def set_details(self,name:str,roll_no:int,branch:str,gender:str,age:int) -> None:
+        self.name =  name 
+        self.roll_no = roll_no 
+        self.branch =  branch 
+        self.gender = gender 
+        self.age =  age 
+
+    def display_details(self) -> None:
+        print(f"name is {self.name}")
+        print(f"roll_no is {self.roll_no}")
+        print(f"branch is {self.branch}")
+        print(f"gender is {self.gender}")
+        print(f"age is {self.age}")
+
+
+Student1 = Students()
+Student1.set_details("anshu",1001,"cse","male",23)
+Student1.display_details()
+
+#for better  used initialization fuction:
+class Studentss:
+    def __init__(self,name: str,roll_no: int,branch: str,gender: str,age: int)->None:
+
+    
+        self.name =  name 
+        self.roll_no = roll_no 
+        self.branch =  branch 
+        self.gender = gender 
+        self.age =  age 
+
+    def display_details(self) -> None:
+        print(f"name is {self.name}")
+        print(f"roll_no is {self.roll_no}")
+        print(f"branch is {self.branch}")
+        print(f"gender is {self.gender}")
+        print(f"age is {self.age}")
+
+Student1 = Studentss("vidyanshu",1002,"cse","male",21)
+Student1.display_details()
+
+
+
+#Complete expample : student class
+class Student:
+    def __init__(self,name: str,roll_no: int,branch: str,gender: str,age: int,marks:list[int])->None:
+
+    
+        self.name =  name 
+        self.roll_no = roll_no 
+        self.branch =  branch 
+        self.gender = gender 
+        self.age =  age 
+        self.marks:list[int] = marks
+
+    def total(self) -> int: 
+        return sum(self.marks)
+
+    def average(self) ->int:
+        return self.total() / len(self.marks)
+
+    def grade(self)->None:
+        avg = self.average()
+        if avg >=90:
+            print("a")
+        elif avg >=50 and avg <=89:
+            print("B")
+        else:
+            print("C")
+    def display_details(self) ->None:
+        print(f"name is {self.name}")
+        print(f"roll_no is {self.roll_no}")
+        print(f"branch is {self.branch}")
+        print(f"gender is {self.gender}")
+        print(f"age is {self.age}")
+        print(f"total marks is {self.total()}")
+        print(f"Average is {self.average()}")
+        print(f"grade is {self.grade()}")
+
+    
+
+Student1 = Student("vidyanshu",1002,"cse","male",21,[78,90,96,67,97])
+Student1.display_details()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
